@@ -1,0 +1,2 @@
+// Word up
+var wordArray = ["vanilla", "pool", "fireworks", "weekend", "cat", "philosophy", "electronic", "photograph", "fixer", "beach", "speed", "dapper", "intake", "process", "time", "bulb", "carnivore", "power", "wilderness", "extraneous"];
