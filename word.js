@@ -16,45 +16,53 @@ var Word = function(wrd){
 	//make a property called getLets, set it to a function and inside the function loop over the word property and push letter objects into the lets property.
 	this.getLets = function(){
 		for (var i = 0; i < this.word.length; i++){
-			this.lets.push(new letter(this.word.charAt(i)));
+			this.lets.push(new letter.Letter(this.word.charAt(i)));
 		}
 	};
+	//console.log(this.getLets());
 
 	//returns ture or false whether we found the current word or not
 	this.didWeFindTheWord = function() {
-		//set the found property to true or false based on whether all the letters have been found or not
-	// 	if () {
+	//set the found property to true or false based on whether all the letters have been found or not
+		// if () {
 
-	// 		found = true;
+		// 	found = true;
 
-	// 	} else {
+		// } else {
 
-	// 		return;
+		// 	return;
 
-	// 	}
-	// 	return found;
-	// };
+		// }
+		// return found;
+	};
 
 	this.checkIfLetterFound = function(guessLetter) {
 		//set a variable whatToReturn to 0
 		this.whatToReturn = 0;
 		//loop over the lets property and if the letter object's charac property equals the guessletter then set the appear property of the letter object to be true. Also increment whatToReturn.
+		console.log(letter.Letter.charac);
 		for (var i = 0; i < this.lets.length; i++){
-			if (letter.charac )
+			if (letter.Letter.charac === guessLetter) {
+				letter.Letter.appear = true;
+				this.whatToReturn++;
+			}
 		}
-		//return whatToReturn
+		return this.whatToReturn;
 	};
 
 	this.wordRender = function() {
 		//make a variable named str and set it to empty quotes
+		this.str = "";
 
 		//loop over this.lets and call the letterRender property of the letter object that you're looping over, and add it to str
-
-		//return str
+		for (var i = 0; i < this.lets.length; i++) {
+			this.str += this.lets[i].letterRender();
+			
+		}
+		return this.str;
 	};
 }
 
-};
 
-module.exports = Word;
+module.exports.Word = Word;
 //export the Word constructor here at the end

@@ -1,7 +1,7 @@
 // This is where the game is played and contains all of the user-input. The application should end when a player successfully guesses a word or runs out of guesses.
 
 var prompt = require('prompt');
-var Word = require('./word.js');
+var word = require('./word.js');
 
 prompt.start();
 
@@ -15,7 +15,7 @@ game = {
 		this.resetGuessesRemaining();
 
 		//get a random word from the array
-		this.currentWrd = new Word(this.wordBank[Math.floor(Math.random()* this.wordBank.length)]);
+		this.currentWrd = new word.Word(this.wordBank[Math.floor(Math.random()* this.wordBank.length)]);
 
 		this.currentWrd.getLets(); //populate currentWrd (made from Word constructor function) object with letters
 

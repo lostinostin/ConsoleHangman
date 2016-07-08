@@ -18,4 +18,4 @@ var Letter = function(lett) {
 };
 
 //export the Letter constructor here
-module.exports = Letter;
+module.exports.Letter = Letter;
