@@ -30,7 +30,7 @@ game = {
 
 		prompt.get(['guessLetter'], function(err, result) {
 		    // result is an object like this: { guessLetter: 'f' }
-		    //console.log(result);
+		    console.log(result);
 		    
 		    console.log('  The letter or space you guessed is: ' + result.guessLetter);
 
