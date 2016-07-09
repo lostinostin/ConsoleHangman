@@ -2,11 +2,12 @@
 
 var prompt = require('prompt');
 var word = require('./word.js');
+var gameObj = require('./game.js');
 
 prompt.start();
 
 game = {
-	wordBank : ["heart and soul", "relax", "burning up", "manic monday", "into the groove", "invisible touch", "rebel yell"],
+	//wordBank : ["heart and soul", "relax", "burning up", "manic monday", "into the groove", "invisible touch", "rebel yell"],
 	wordsWon : 0,
 	guessesRemaining : 10, //per word
 	currentWrd : null, //the word object
@@ -15,7 +16,7 @@ game = {
 		this.resetGuessesRemaining();
 
 		//get a random word from the array
-		this.currentWrd = new word.Word(this.wordBank[Math.floor(Math.random()* this.wordBank.length)]);
+		this.currentWrd = new word.Word(gameObj.game.wordChoices[Math.floor(Math.random()* gameObj.game.wordChoices.length)]);
 
 		this.currentWrd.getLets(); //populate currentWrd (made from Word constructor function) object with letters
 

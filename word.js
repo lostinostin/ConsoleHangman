@@ -24,20 +24,16 @@ var Word = function(wrd){
 	//returns ture or false whether we found the current word or not
 	this.didWeFindTheWord = function() {
 		var counter = 0;
-	//set the found property to true or false based on whether all the letters have been found or not
+
+		//set the found property to true or false based on whether all the letters have been found or not
 		for(var i = 0; i < this.lets.length; i++){
-
 			if (this.lets[i].appear) {
-
 				counter++;
-
 			}
 		} 
 
 		if (this.lets.length === counter) {
-
 			this.found = true;
-
 		}
 		return this.found;
 
